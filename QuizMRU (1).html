@@ -1,0 +1,143 @@
+<html><head>
+	<title>QuizMCU.</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+        function resultado(){
+          var b1=document.getElementById('b1');
+          b1.innerHTML="OK"
+          var b2=document.getElementById('b2');
+          b2.innerHTML="X"
+          var b3=document.getElementById('b3');
+          b3.innerHTML="X"
+          var b4=document.getElementById('b4');
+          b4.innerHTML="OK"
+          var b5=document.getElementById('b5');
+          b5.innerHTML="OK"
+          var b6=document.getElementById('b6');
+          b6.innerHTML="X"
+          var b7=document.getElementById('b7');
+          b7.innerHTML="OK"
+          var b8=document.getElementById('b8');
+          b8.innerHTML="X"
+          var b9=document.getElementById('b9');
+          b9.innerHTML="OK"
+          var b10=document.getElementById('b10');
+          b10.innerHTML="X"
+          var b11=document.getElementById('b11');
+          b11.innerHTML="OK"
+          var b12=document.getElementById('b12');
+          b12.innerHTML="X"
+          var b13=document.getElementById('b13');
+          b13.innerHTML="X"
+          var b14=document.getElementById('b14');
+          b14.innerHTML="OK"
+          var b15=document.getElementById('b15');
+          b15.innerHTML="X"
+          var res1= document.querySelector('input[name="a"]:checked').value;
+          var res2= document.querySelector('input[name="b"]:checked').value;
+          var res3= document.querySelector('input[name="c"]:checked').value;
+          var res4= document.querySelector('input[name="d"]:checked').value;
+          var res5= document.querySelector('input[name="e"]:checked').value;
+          //Todo esto vendran siendo las variables siendo los [bx] la variable de si x respuesta es buena o mala, y los [resx] siendo los puntos de dichas respuestas (siendo un total de 5 puntos).
+          calificacion=0;
+            if(res1==1)
+            calificacion+=1;
+            if(res2==1)
+            calificacion+=1;
+            if(res2==2)
+            calificacion+=1;
+            if(res3==1)
+            calificacion+=1;
+            if(res3==3)
+            calificacion+=1;
+            if(res4==1)
+            calificacion+=1;
+            if(res5==1)
+            calificacion+=1;
+            alert("Sacaste "+ calificacion+" respuestas correctas :D.");
+          //Y esto vendra siendo lo que vale cada respuesta correcta, MÁS el "alert" que te indica tu puntuación.
+        }
+	</script>
+</head>
+<body style="background-color:#ffbfaf ;" >
+	<div style="text-align:left;">
+    <center><h1>Quiz de MRU.</h1></center>
+	<hr>
+	<hr>
+    <table width="100%" border="0">
+        <tr ><td>
+	        <b>¿Qué es el MRU?</b> <br>
+	            <input type="radio" name="a" id="res1" value="1">
+                <label >Moviento de un objeto en linea recta.<div id="b1" style="color:blue;"></div></label>
+            <br>
+                <input type="radio" name="a" id="res1" value="2">
+                <label >Movimiento de un objeto en diagonal.<div id="b2" style="color:red;"></div></label>
+            <br>
+                <input type="radio" name="a" id="res1" value="3">
+                <label >Movimiento de un objeto en horizontal.<div id="b3" style="color:red;"></div></label>
+            <!--Aqui esta la pregunta 1 que utiliza el "radio" para escojer solo una respuesta.-->
+	        <br>
+            <br>
+	        <b>Escoje dos formulas que correspondan al MRU.</b> <br>
+	            <input type="checkbox" name="b" value="1">
+                <label for="res2">d = Vi. t+1/2. a.t^2<div id="b4" style="color:blue;"></div></label>
+            <br>
+                <input type="checkbox" name="b" value="2">
+                <label for="res2">s = so + v·t<div id="b5" style="color:blue;"></div></label>
+            <br>
+                <input type="checkbox" name="b" value="3">
+                <label for="res2">h = Vt t+5 t^8<div id="b6" style="color:red;"></div></label>
+            <!--Y la pregunta 2 utiliza el "checkbox" para poder escojer dos o más respuestas.-->
+	        <br>
+            <br>
+	        <b>De las cuatro opciones, escoje solo dos que representen la diferencia entre MRU y MRUV.</b> <br>
+	            <input type="checkbox" name="c" value="1">
+                <label for="res3">La variación de la velocidad debido a la aceleración que posee un mruv.<div id="b7" style="color:blue;"></div></label>
+            <br>
+                <input type="checkbox" name="c" value="2">
+                <label for="res3">Que el pollo esta caliente y el otro esta frio.<div id="b8" style="color:red;"></div></label>
+            <br>
+                <input type="checkbox" name="c" value="3">
+                <label for="res3">La velocidad de desplazamiento de los cuerpos se mantiene constante.<div id="b9" style="color:blue;"></div></label>
+            <br>
+                <input type="checkbox" name="c" value="3">
+                <label for="res3">Los hongos son rojos y los pinos no.<div id="b10" style="color:red;"></div></label>
+            <!--Una cosa que casi olvido mencionar, los <div's> sirven para que las respuestas incorrectas se pinten de rojo y las respuestas correctas se pinten de azul.-->
+            <br>
+            <br>
+	        <b>¿Qué significa MRU?</b> <br>
+	            <input type="radio" name="d" value="1">
+                <label for="res4">Movimiento Rectilineo Uniforme.<div id="b11" style="color:blue;"></div></label>
+            <br>
+                <input type="radio" name="d" value="2">
+                <label for="res4">Movimiento Recto de Urano.<div id="b12" style="color:red;"></div></label>
+            <br>
+                <input type="radio" name="d" value="3">
+                <label for="res4">Mario carreras de la WII U.<div id="b13" style="color:red;"></div></label>
+            <br>
+            <br>
+	        <b>En el MRU, ¿El objeto va a velocidad constante?</b> <br>
+	            <input type="radio" name="e" value="1">
+                <label for="res5">Si.<div id="b14" style="color:blue;"></div></label>
+            <br>
+                <input type="radio" name="e" value="2">
+                <label for="res5">No.<div id="b15" style="color:red;"></div></label>
+            <br>
+	        <br>
+	            <button type="button" onclick="resultado()">Aqui se termina :D.</button>
+            <!--El botón que... Bueno, pos' es el boton que te mostrara tu resultado, no hay mucho que decir...-->
+            </td>
+            <td>
+                <div style="text-align:center ;">
+                    <img src="mru.jpg" width="600" height="500">
+                <!--Imagen :D.-->
+                </div>
+            </td>
+        </tr>
+    </table>
+	</div>
+    <hr>
+    <hr>
+    <center><h5>Alatorre Quezada David / Sainz Felix Jesús Abraham / De León Berumen Eduardo Alonso / Vázquez Juárez Juan(k la foca).</h5></center>
+    <!--Y los nombres de los integrantes de nuestro equipo y yo :].-->
+</body></html>

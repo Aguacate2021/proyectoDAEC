@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Promedios de velocidades</title>
+</head>
+<body bgcolor="#57bd9c">
+	<script type="text/javascript">
+		var promedio,i,velocidades,v,valor=0;
+		function monofedo() {
+			valor=0
+			v=document.getElementById("numV").value;
+			if(v==""){
+					alert("Favor de colocar un numero");
+			}
+			else{
+				velocidades=[v];
+				for (i=1; i <= v; i++) {
+						velocidades[i]=parseInt(prompt("Dame el valor de la velocidad # "+ i));
+						valor=valor+velocidades[i];
+				}
+				promedio=valor/v;
+				if(isNaN(promedio)){
+					alert("Favor de colocar solo numeros");
+				}
+				else{
+					document.getElementById("ProM").value=promedio;	
+				}
+			}	
+		}
+	</script>
+	<center>
+	<h2>Calculo de un promedio de velocidades</h2>
+
+  <!--1-->
+  <Label>Calcula la cantidad de velociades </Label><br>
+  <input type="text" id ="numV" placeholder="Numero de Velocidades">
+  <label></label>
+  <br><br>
+
+  <label>Respuesta de la velocidad </label>
+  <input disabled type="text" id ="ProM" placeholder="Respuesta">
+  <label></label>
+ <br><br>
+  <button value="Cantidad" onclick="monofedo()">Calcular la velocidad promedio</button><br>
+  <p><h2>¿Que es la velocidad en fisica?</h2></p>
+  <p>La velocidad es una magnitud física que expresa la relación entre el espacio recorrido por un objeto, el tiempo empleado para ello y su dirección.</p>
+  <img src="https://ca-times.brightspotcdn.com/dims4/default/22b6bb8/2147483647/strip/true/crop/1854x858+0+0/resize/1486x688!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F91%2Fa1%2F18e5586bb0c07a6dc4fe0759d5e9%2F5e998da1f50d44ad8f3cd3ee055a4a86" width="600px" height="300px"><br><br>
+  <a href="Proyecto_Indice.html">Indice</a> 
+  
+
+</center>
+
+
+</body>
+</html>

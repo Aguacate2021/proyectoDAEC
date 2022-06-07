@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			font-size: 100%;
+		}
+		select{
+			font-size: 100%;
+			size: 100%;
+		}
+		input{
+			font-size: 100%;
+			size: 100%;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Conversor</title>
+		<script type="text/javascript">
+			//Declaramos cada una de las variables que vamos a utilizar
+		var ocultar,n1,n2,n3,valorn1,valorn2,respuesta1,respuesta2,g1,g2;
+		function cambio3(){
+			//En la variable n3 se guarda el valor del select3 que puede ser Tiempo o Distancia
+			n3=document.getElementById("select3").value;
+			//Si n3 es igual a: Tiempo, entonces por medio de cada id, las opciones de tiempo se muestran y las opciones de distancia de ocultan
+			//si no es igual a: Tiempo, entonces se ocultan todas las opciones de tiempo y se muestran todas las de distancia
+			if (n3=="Tiempo") {
+				document.getElementById('opcion10').style.display='';
+				document.getElementById('opcion11').style.display='';
+				document.getElementById('opcion12').style.display='';
+				document.getElementById('opcionS10').style.display='';
+				document.getElementById('opcionS11').style.display='';
+				document.getElementById('opcionS12').style.display='';
+				document.getElementById('opcionS13').style.display='';
+				document.getElementById('opcion13').style.display='';
+				document.getElementById('opcion1').style.display='none';
+				document.getElementById('opcion2').style.display='none';
+				document.getElementById('opcion3').style.display='none';
+				document.getElementById('opcion4').style.display='none';
+				document.getElementById('opcion5').style.display='none';
+				document.getElementById('opcion6').style.display='none';
+				document.getElementById('opcion7').style.display='none';
+				document.getElementById('opcion8').style.display='none';
+				document.getElementById('opcion9').style.display='none';
+				document.getElementById('opcionS1').style.display='none';
+				document.getElementById('opcionS2').style.display='none';
+				document.getElementById('opcionS3').style.display='none';
+				document.getElementById('opcionS4').style.display='none';
+				document.getElementById('opcionS5').style.display='none';
+				document.getElementById('opcionS6').style.display='none';
+				document.getElementById('opcionS7').style.display='none';
+				document.getElementById('opcionS8').style.display='none';
+				document.getElementById('opcionS9').style.display='none';
+			}
+			else{
+				document.getElementById('opcion1').style.display='';
+				document.getElementById('opcion2').style.display='';
+				document.getElementById('opcion3').style.display='';
+				document.getElementById('opcion4').style.display='';
+				document.getElementById('opcion5').style.display='';
+				document.getElementById('opcion6').style.display='';
+				document.getElementById('opcion7').style.display='';
+				document.getElementById('opcion8').style.display='';
+				document.getElementById('opcion9').style.display='';
+				document.getElementById('opcionS1').style.display='';
+				document.getElementById('opcionS2').style.display='';
+				document.getElementById('opcionS3').style.display='';
+				document.getElementById('opcionS4').style.display='';
+				document.getElementById('opcionS5').style.display='';
+				document.getElementById('opcionS6').style.display='';
+				document.getElementById('opcionS7').style.display='';
+				document.getElementById('opcionS8').style.display='';
+				document.getElementById('opcionS9').style.display='';
+				document.getElementById('opcion10').style.display='none';
+				document.getElementById('opcion11').style.display='none';
+				document.getElementById('opcion12').style.display='none';
+				document.getElementById('opcionS10').style.display='none';
+				document.getElementById('opcionS11').style.display='none';
+				document.getElementById('opcionS12').style.display='none';
+				document.getElementById('opcion13').style.display='none';
+				document.getElementById('opcionS13').style.display='none';
+			}
+		}
+		function reloj1() {
+			//Como es una funcion que se estara repitiendo constantemente se establecen algunos valores en 0
+			respuesta2=0;
+			respuesta1=0;
+			//Se obtiene el valor de las opciones de los select por medio de las id
+			n2=document.getElementById("select2").value;
+			n1=document.getElementById("select1").value;
+			//Se guardan en estas variables los dos valores de los distintos labels
+			valorn1=document.getElementById('valor1').value;
+			valorn2=document.getElementById('valor2').value;
+			//Por medio de un switch se compara la seleccion del primer select para cada una de las selecciones 
+			switch(n1){
+						//para cada una de las selecciones se comparara el valor de n2 que contiene del select2 y en base a eso se realizara la respectiva operacion matematica y se guardara en la respectiva variable
+						case "kilometros":
+						switch(n2){
+							case "metros":
+							respuesta1=valorn1*1000;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*100000;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*1000000;
+							break;
+							case "milla":
+							respuesta1=valorn1/1.609;
+							break;
+							case "yarda":
+							respuesta1=valorn1*1094;
+							break;
+							case "pie":
+							respuesta1=valorn1*3281;
+							break;
+							case "pulgada":
+							respuesta1=valorn1*39370;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/1.852;
+							break;
+						}
+						break;
+						case "milimetros":
+						switch(n2){
+							case "metros":
+							respuesta1=valorn1/1000;
+							break;
+							case "centimetros":
+							respuesta1=valorn1/10;
+							break;
+							case "kilometros":
+							respuesta1=valorn1/100000;
+							break;
+							case "milla":
+							respuesta1=valorn1/1609000;
+							break;
+							case "yarda":
+							respuesta1=valorn1/904;
+							break;
+							case "pie":
+							respuesta1=valorn1/305;
+							break;
+							case "pulgada":
+							respuesta1=valorn1/25.4;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/1852000;
+							break;
+						}
+						break;
+						case "centimetros":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1/100000;
+							break;
+							case "metros":
+							respuesta1=valorn1/100;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*10;
+							break;
+							case "milla":
+							respuesta1=valorn1/160934;
+							break;
+							case "yarda":
+							respuesta1=valorn1/91.44;
+							break;
+							case "pie":
+							respuesta1=valorn1/30.48;
+							break;
+							case "pulgada":
+							respuesta1=valorn1/2.54;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/185200;
+							break;
+						}
+						break;
+						case"metros":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1/1000;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*100;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*1000;
+							break;
+							case "milla":
+							respuesta1=valorn1/1609;
+							break;
+							case "yarda":
+							respuesta1=valorn1*1.094;
+							break;
+							case "pie":
+							respuesta1=valorn1*3.281;
+							break;
+							case "pulgada":
+							respuesta1=valorn1*39.37;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/1852;
+							break;
+						}
+						break;
+						case"milla":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1*1.609;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*160934;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*1609000;
+							break;
+							case "metros":
+							respuesta1=valorn1*1609;
+							break;
+							case "yarda":
+							respuesta1=valorn1*1760;
+							break;
+							case "pie":
+							respuesta1=valorn1*5280;
+							break;
+							case "pulgada":
+							respuesta1=valorn1*63360;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/1.151;
+							break;
+						}
+						break;
+						case"yarda":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1/1094;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*91.44;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*914;
+							break;
+							case "metros":
+							respuesta1=valorn1/1.094;
+							break;
+							case "milla":
+							respuesta1=valorn1/1760;
+							break;
+							case "pie":
+							respuesta1=valorn1*3;
+							break;
+							case "pulgada":
+							respuesta1=valorn1*36;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/2025;
+							break;
+						}
+						break;
+						case"pie":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1/3281;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*30.48;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*305;
+							break;
+							case "metros":
+							respuesta1=valorn1/3.281;
+							break;
+							case "milla":
+							respuesta1=valorn1/5280;
+							break;
+							case "yarda":
+							respuesta1=valorn1/3;
+							break;
+							case "pulgada":
+							respuesta1=valorn1*12;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/6076;
+							break;
+						}
+						break;
+						case"pulgada":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1/39370;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*2.54;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*25.4;
+							break;
+							case "metros":
+							respuesta1=valorn1/39.37;
+							break;
+							case "milla":
+							respuesta1=valorn1/63360;
+							break;
+							case "pie":
+							respuesta1=valorn1/12;
+							break;
+							case "yarda":
+							respuesta1=valorn1/36;
+							break;
+							case "milla nautica":
+							respuesta1=valorn1/72913;
+							break;
+						}
+						break;
+						case"milla nautica":
+						switch(n2){
+							case "kilometros":
+							respuesta1=valorn1*1.852;
+							break;
+							case "centimetros":
+							respuesta1=valorn1*185200;
+							break;
+							case "milimetros":
+							respuesta1=valorn1*1852000;
+							break;
+							case "metros":
+							respuesta1=valorn1*1852;
+							break;
+							case "milla":
+							respuesta1=valorn1*1.151;
+							break;
+							case "pie":
+							respuesta1=valorn1*6076;
+							break;
+							case "pulgada":
+							respuesta1=valorn1*72913;
+							break;
+							case "yarda":
+							respuesta1=valorn1*2025;
+							break;
+						}
+						break;
+						case"segundos":
+						switch(n2){
+							case"minutos":
+							respuesta1=valorn1/60;
+							break;
+							case"dias":
+							respuesta1=valorn1/86400;
+							break;
+							case"horas":
+							respuesta1=valorn1/3600;
+							break;
+						}
+						break;
+						case"minutos":
+						switch(n2){
+							case"segundos":
+							respuesta1=valorn1*60;
+							break;
+							case"dias":
+							respuesta1=valorn1/1440;
+							break;
+							case"horas":
+							respuesta1=valorn1/60;
+							break;
+						}
+						break;
+						case"horas":
+						switch(n2){
+							case"segundos":
+							respuesta1=valorn1*3600;
+							break;
+							case"minutos":
+							respuesta1=valorn1* 60;
+							break;
+							case"dias":
+							respuesta1=valorn1/24;
+							break;
+						}
+						break;
+						case"dia":
+						switch(n2){
+							case"segundos":
+							respuesta1=valorn1*86400;
+							break;
+							case"minutos":
+							respuesta1=valorn1*1440;
+							break;
+							case"horas":
+							respuesta1=valorn1/24;
+							break;
+						}
+						break;
+			}
+			//Por medio de un switch se compara la seleccion del segundo select para cada una de las selecciones 
+			switch(n2){
+				//para cada una de las selecciones se comparara el valor de n1 que contiene del select1 y en base a eso se realizara la respectiva operacion matematica y se guardara en la respectiva variable
+						case "kilometros":
+						switch(n1){
+							case "metros":
+							respuesta2=valorn2*1000;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*100000;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*1000000;
+							break;
+							case "milla":
+							respuesta2=valorn2/1.609;
+							break;
+							case "yarda":
+							respuesta2=valorn2*1094;
+							break;
+							case "pie":
+							respuesta2=valorn2*3281;
+							break;
+							case "pulgada":
+							respuesta2=valorn2*39370;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/1.852;
+							break;
+						}
+						break;
+						case "centimetros":
+						switch(n2){
+							case "kilometros":
+							respuesta2=valorn2/100000;
+							break;
+							case "metros":
+							respuesta2=valorn2/100;
+							break;
+							case "milimetros":
+							respuesta2=valorn2/10;
+							break;
+							case "milla":
+							respuesta2=valorn2/160934;
+							break;
+							case "yarda":
+							respuesta2=valorn2/91.44;
+							break;
+							case "pie":
+							respuesta2=valorn2/30.48;
+							break;
+							case "pulgada":
+							respuesta2=valorn2/2.54;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/185200;
+							break;
+						}
+						break;
+						case "milimetros":
+						switch(n2){
+							case "metros":
+							respuesta2=valorn2/1000;
+							break;
+							case "centimetros":
+							respuesta2=valorn2/10;
+							break;
+							case "kilometros":
+							respuesta2=valorn2/100000;
+							break;
+							case "milla":
+							respuesta2=valorn2/1609000;
+							break;
+							case "yarda":
+							respuesta2=valorn2/904;
+							break;
+							case "pie":
+							respuesta2=valorn2/305;
+							break;
+							case "pulgada":
+							respuesta2=valorn2/25.4;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/1852000;
+							break;
+						}
+						break;
+						case"metros":
+						switch(n1){
+							case "kilometros":
+							respuesta2=valorn2/1000;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*100;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*1000;
+							break;
+							case "milla":
+							respuesta2=valorn2/1609;
+							break;
+							case "yarda":
+							respuesta2=valorn2*1.094;
+							break;
+							case "pie":
+							respuesta2=valorn2*3.281;
+							break;
+							case "pulgada":
+							respuesta2=valorn2*39.37;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/1852;
+							break;
+						}
+						break;
+						case"milla":
+						switch(n1){
+							case "kilometros":
+							respuesta2=valorn2*1.609;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*160934;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*1609000;
+							break;
+							case "metros":
+							respuesta2=valorn2*1609;
+							break;
+							case "yarda":
+							respuesta2=valorn2*1760;
+							break;
+							case "pie":
+							respuesta2=valorn2*5280;
+							break;
+							case "pulgada":
+							respuesta2=valorn2*63360;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/1.151;
+							break;
+						}
+						break;
+						case"yarda":
+						switch(n1){
+							case "kilometros":
+							respuesta2=valorn2/1094;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*91.44;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*914;
+							break;
+							case "metros":
+							respuesta2=valorn2/1.094;
+							break;
+							case "milla":
+							respuesta2=valorn2/1760;
+							break;
+							case "pie":
+							respuesta2=valorn2*3;
+							break;
+							case "pulgada":
+							respuesta2=valorn2*36;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/2025;
+							break;
+						}
+						break;
+						case"pie":
+						switch(n1){
+							case "kilometros":
+							respuesta2=valorn2/3281;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*30.48;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*305;
+							break;
+							case "metros":
+							respuesta2=valorn2/3.281;
+							break;
+							case "milla":
+							respuesta2=valorn2/5280;
+							break;
+							case "yarda":
+							respuesta2=valorn2/3;
+							break;
+							case "pulgada":
+							respuesta2=valorn2*12;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/6076;
+							break;
+						}
+						break;
+						case"pulgada":
+						switch(n1){
+							case "kilometros":
+							respuesta2=valorn2/39370;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*2.54;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*25.4;
+							break;
+							case "metros":
+							respuesta2=valorn2/39.37;
+							break;
+							case "milla":
+							respuesta2=valorn2/63360;
+							break;
+							case "pie":
+							respuesta2=valorn2/12;
+							break;
+							case "yarda":
+							respuesta2=valorn2/36;
+							break;
+							case "milla nautica":
+							respuesta2=valorn2/72913;
+							break;
+						}
+						break;
+						case"milla nautica":
+						switch(n1){
+							case "kilometros":
+							respuesta2=valorn2*1.852;
+							break;
+							case "centimetros":
+							respuesta2=valorn2*185200;
+							break;
+							case "milimetros":
+							respuesta2=valorn2*1852000;
+							break;
+							case "metros":
+							respuesta2=valorn2*1852;
+							break;
+							case "milla":
+							respuesta2=valorn2*1.151;
+							break;
+							case "pie":
+							respuesta2=valorn2*6076;
+							break;
+							case "pulgada":
+							respuesta2=valorn2*72913;
+							break;
+							case "yarda":
+							respuesta2=valorn2*2025;
+							break;
+						}
+						break;
+						case"segundos":
+						switch(n1){
+							case"minutos":
+							respuesta2=valorn2/60;
+							break;
+							case"dias":
+							respuesta2=valorn2/86400;
+							break;
+							case"horas":
+							respuesta2=valorn2/3600;
+							break;
+						}
+						break;
+						case"minutos":
+						switch(n1){
+							case"segundos":
+							respuesta2=valorn2*60;
+							break;
+							case"dias":
+							respuesta2=valorn2/1440;
+							break;
+							case"horas":
+							respuesta2=valorn2/60;
+							break;
+						}
+						break;
+						case"horas":
+						switch(n1){
+							case"segundos":
+							respuesta2=valorn2*3600;
+							break;
+							case"minutos":
+							respuesta2=valorn2*60;
+							break;
+							case"dias":
+							respuesta2=valorn2/24;
+							break;
+						}
+						break;
+						case"dia":
+						switch(n1){
+							case"segundos":
+							respuesta2=valorn2*86400;
+							break;
+							case"minutos":
+							respuesta2=valorn2*1440;
+							break;
+							case"horas":
+							respuesta2=valorn2/24;
+							break;
+						}
+						break;
+						//g1 y g2 son variables que utilizaremos para realizar la operacion correcta si se hace cualquier cambio, por ejemplo si se cambia el valor del input 2 se realizara la operacion que tomando el valor del input 2
+						g1=respuesta1;
+						g2=respuesta2;
+			}
+			//Se abre un if en el cual la condicion es: si respuesta respuesta1 es igual a 0 o isNaN se ejecute un if con la condicion: si respuesta2 es igual a 0 o isNaN se asigne en los inputs los valores "" y se guarden los valores en g1 y g2
+			if (respuesta1==0||isNaN(respuesta1)) {
+				if (respuesta2==0||isNaN(respuesta2)) {
+					document.getElementById("valor1").value="";
+					document.getElementById("valor2").value="";
+					g1=respuesta1;
+					g2=respuesta2;
+				}
+				//si la anterior condicion es falsa se imprime en el input de valor1 y se se guarden los valores en g1 y g2
+				else{
+					document.getElementById("valor1").value=respuesta2;
+					g1=document.getElementById("valor1").value;
+					g2=document.getElementById("valor2").value;
+				}
+			}
+			//si la primer condicion es falsa se compara el valor de respuesta2 es igual a 0 o isNaN si resulta cierto, se imprime el valor de respuesta1 en el input con la id "valor2"
+			else{
+				if (respuesta2==0||isNaN(respuesta2)) {
+					document.getElementById("valor2").value=respuesta1;
+					g2=document.getElementById("valor2").value;
+				}
+				//si la anterior condicion es falsa aqui entra en accion un if/else con las variables g1 y g2
+				else{
+					//En este if else compara el valor de g1 y valorn1 para ver si son iguales con esto realizamos  que si cualquier valor de los dos inputs cambia se realice la salida de datos correspondiente
+						if (g1==valorn1) {
+							document.getElementById("valor1").value=respuesta2;
+							g1=document.getElementById("valor1").value;
+						}
+						else{
+								if (g2==valorn2) {
+									document.getElementById("valor2").value=respuesta1;
+									g2=document.getElementById("valor2").value;
+								}
+								else{
+									document.getElementById("valor1").value=respuesta2;
+									g1=document.getElementById("valor2").value;
+								}
+						}
+
+				}
+			}
+
+		}
+		function ocultar1(){
+			//En la variable n2 y n1 se guarda el valor del select1 y el select2
+			n2=document.getElementById("select2").value;
+			n1=document.getElementById("select1").value;
+			//Si n3 es igual a: Tiempo se ejecutara solo una parte de la funcion que afecte a las opciones de tiempo
+			if (n3=="Tiempo") {
+				//Primero se muestran todas las opciones posibles para eliminar cualquier accion anterior
+				document.getElementById('opcionS10').style.display='';
+				document.getElementById('opcionS11').style.display='';
+				document.getElementById('opcionS12').style.display='';
+				document.getElementById('opcionS13').style.display='';
+				//Luego se compara por medio de un switch la seleccion que se hizo en n1 para ocultar la opcion en su contra parte, asi evitamos que seleccione lo mismo en cada lado
+				switch(n1){
+					case "segundos":
+					document.getElementById('opcionS10').style.display='none';
+					break;
+					case "minutos":
+					document.getElementById('opcionS11').style.display='none';
+					break;
+					case"horas":
+					document.getElementById('opcionS12').style.display='none';
+					break;
+					case "dias":
+					document.getElementById('opcionS13').style.display='none';
+					break;
+				}
+			}
+			//Si no, se ejecutara una parte de la funcion que afecte unicamente a las opciones de distancia
+			else{
+				//Primero se muestran todas las opciones posibles para eliminar cualquier accion anterior
+				document.getElementById('opcionS1').style.display='';
+				document.getElementById('opcionS2').style.display='';
+				document.getElementById('opcionS3').style.display='';
+				document.getElementById('opcionS4').style.display='';
+				document.getElementById('opcionS5').style.display='';
+				document.getElementById('opcionS6').style.display='';
+				document.getElementById('opcionS7').style.display='';
+				document.getElementById('opcionS8').style.display='';
+				document.getElementById('opcionS9').style.display='';
+				//Luego se compara por medio de un switch la seleccion que se hizo en n1 para ocultar la opcion en su contra parte, asi evitamos que seleccione lo mismo en cada lado	
+					switch(n1){
+						case "kilometros":
+							document.getElementById('opcionS1').style.display='none';
+						break;
+						case "centimetros":
+							document.getElementById('opcionS2').style.display='none';
+						break;
+						case "metros":
+							document.getElementById('opcionS3').style.display='none';
+						break;
+						case "milimetros":
+							document.getElementById('opcionS4').style.display='none';
+						break;
+						case "milla":
+							document.getElementById('opcionS5').style.display='none';
+						break;
+						case "yarda":
+							document.getElementById('opcionS6').style.display='none';
+						break;
+						case "pie":
+							document.getElementById('opcionS7').style.display='none';
+						break;
+						case "pulgada":
+							document.getElementById('opcionS8').style.display='none';
+						break;
+						case "milla nautica":
+							document.getElementById('opcionS9').style.display='none';
+						break;
+					}
+			}
+
+		}
+		function ocultar2(){
+			//En la variable n2 y n1 se guarda el valor del select1 y el select2
+			n1=document.getElementById("select1").value;
+			n2=document.getElementById("select2").value;
+			//Si n3 es igual a: Tiempo se ejecutara solo una parte de la funcion que afecte a las opciones de tiempo
+			if (n3=="Tiempo") {
+				//Primero se muestran todas las opciones posibles para eliminar cualquier accion anterior
+				document.getElementById('opcion10').style.display='';
+				document.getElementById('opcion11').style.display='';
+				document.getElementById('opcion12').style.display='';
+				document.getElementById('opcion13').style.display='';
+				//Luego se compara por medio de un switch la seleccion que se hizo en n2 para ocultar la opcion en su contra parte, asi evitamos que seleccione lo mismo en cada lado	
+				switch(n2){
+					case "segundos":
+					document.getElementById('opcion10').style.display='none';
+					break;
+					case "minutos":
+					document.getElementById('opcion11').style.display='none';
+					break;
+					case "horas":
+					document.getElementById('opcion12').style.display='none';
+					break;
+					case "dias":
+					document.getElementById('opcion13').style.display='none';
+					break;
+				}
+			}
+			//Si no, se ejecutara una parte de la funcion que afecte unicamente a las opciones de distancia
+			else{
+					//Primero se muestran todas las opciones posibles para eliminar cualquier accion anterior
+					document.getElementById('opcion1').style.display='';
+					document.getElementById('opcion2').style.display='';
+					document.getElementById('opcion3').style.display='';
+					document.getElementById('opcion4').style.display='';
+					document.getElementById('opcion5').style.display='';
+					document.getElementById('opcion6').style.display='';
+					document.getElementById('opcion7').style.display='';
+					document.getElementById('opcion8').style.display='';
+					document.getElementById('opcion9').style.display='';
+					//Luego se compara por medio de un switch la seleccion que se hizo en n2 para ocultar la opcion en su contra parte, asi evitamos que seleccione lo mismo en cada lado		
+					switch(n2){
+						case "kilometros":
+							document.getElementById('opcion1').style.display='none';
+						break;
+						case "centimetros":
+							document.getElementById('opcion2').style.display='none';
+						break;
+						case "metros":
+							document.getElementById('opcion3').style.display='none';
+						break;
+						case "milimetros":
+							document.getElementById('opcion4').style.display='none';
+						break;
+						case "milla":
+							document.getElementById('opcion5').style.display='none';
+						break;
+						case "yarda":
+							document.getElementById('opcion6').style.display='none';
+						break;
+						case "pie":
+							document.getElementById('opcion7').style.display='none';
+						break;
+						case "pulgada":
+							document.getElementById('opcion8').style.display='none';
+						break;
+						case "milla nautica":
+							document.getElementById('opcion9').style.display='none';
+						break;
+					}
+			}
+			
+		}
+		</script>
+</head>
+<body bgcolor="#57bd9c">
+    <hr>
+    <center><h1>Conversiones de unidades.</h1></center>
+    <hr>
+    <hr>
+    <center>
+	<table>
+		<tbody><tr>
+			<td><input style="background-color:#00986c ;"  type="text" id="valor1"> =</td>
+			<td><input style="background-color:#00986c ;" type="text" id="valor2"></td>
+		</tr>
+		<tr>
+			<select id="select3" onchange="cambio3()">
+				<option>Tiempo</option>
+				<option selected>Distancia</option>
+			</select><br>
+            <b><font size="5">Selecione una unidad.</font></b>
+			<td><select id="select1" onchange="ocultar1()">
+				<option disabled="">Seleccione una unidad</option>
+				<option style="" selected="" id="opcion1">kilometros</option>
+				<option style="" id="opcion2">centimetros</option>
+				<option style="display:none" id="opcion3">metros</option>
+				<option style="" id="opcion4">milimetros</option>
+				<option style="" id="opcion5">milla</option>
+				<option style="" id="opcion6">yarda</option>
+				<option style="" id="opcion7">pie</option>
+				<option style="" id="opcion8">pulgada</option>
+				<option style="" id="opcion9">milla nautica</option>
+				<option style="display:none" id="opcion10">segundos</option>
+				<option style="display:none" id="opcion11">minutos</option>
+				<option style="display:none" id="opcion12">horas</option>
+				<option style="display:none" id="opcion13">dias</option>
+			</select></td>
+			<td><select id="select2" onchange="ocultar2()">
+				<option disabled="" selected="">Seleccione una unidad</option>
+				<option style="display:none" id="opcionS1">kilometros</option>
+				<option style="" id="opcionS2">centimetros</option>
+				<option style="" selected="" id="opcionS3">metros</option>
+				<option style="" id="opcionS4">milimetros</option>
+				<option style="" id="opcionS5">milla</option>
+				<option style="" id="opcionS6">yarda</option>
+				<option style="" id="opcionS7">pie</option>
+				<option style="" id="opcionS8">pulgada</option>
+				<option style="" id="opcionS9">milla nautica</option>
+				<option style="display:none" id="opcionS10">segundos</option>
+				<option style="display:none" id="opcionS11">minutos</option>
+				<option style="display:none" id="opcionS12">horas</option>
+				<option style="display:none" id="opcionS13">dias</option>
+			</select></td>
+		</tr>
+    </center>
+	</tbody></table>
+	<script type="text/javascript">
+		setInterval(reloj1,2000);
+	</script>
+    <hr>
+    <hr>
+<b><font>¿Qué son las conversiones de unidades?</font></b>
+<br>
+<font>La conversión de unidades es la transformación del valor numérico de una magnitud física, expresado en una cierta unidad de medida, en otro valor numérico equivalente y expresado en otra unidad de medida de la misma naturaleza.</font>
+<br>
+<b><font>Esto según la UTCH: <a href="https://www.utch.edu.mx/wp-content/uploads/2019/08/MANUAL-F%C3%8DSICA.pdf" target="_blank">Mirar archivo completo aqui.</a></font></b>
+<br>
+<br>
+<b><font>¿Cómo hacer las conversiones de unidades?</font></b>
+<br>
+<font>Este proceso suele realizarse con el uso de los "factores de conversión" o las tablas de conversión de unidades. Frecuentemente basta multiplicar por una fracción (factor de una conversión) y el resultado es otra medida equivalente, en la que han cambiado las unidades.</font>
+<br>
+<img src="https://cdn.discordapp.com/attachments/834974143287001139/983544740983230464/tabla.jpg" width="20%" height="20%"><br>
+<b><font>Esto según Wikipedia: <a href="https://es.wikipedia.org/wiki/Conversi%C3%B3n_de_unidades" target="_blank">Mirar pagina completa aqui.</a></font></b>
+<br>
+<br><a href="Proyecto_Indice.html">Indice</a> 
+<br>
+<h5>Alatorre Quezada David / Sainz Felix Jesús Abraham / De León Berumen Eduardo Alonso / Vázquez Juárez Juan(k la foca).</h5>
+<hr>
+</body>
+</html>

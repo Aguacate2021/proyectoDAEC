@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Calculadora de MRU</title>
+
+		<script type="text/javascript">
+			var Vel,Dis,Tie,MRU;
+			function resultado(){
+				Vel=document.getElementById("V").value;
+				Dis=document.getElementById("D").value;
+				Tie=document.getElementById("T").value;
+				if (Vel=" "){
+					MRU=document.getElementById("res").value=Dis/Tie;
+				}
+				else if (Dis=" "){
+					MRU=document.getElementById("res").value=Vel*Tie;
+				}
+				else{
+					MRU=document.getElementById("res").value=Dis/Vel;
+
+					}
+				}
+	
+		</script>
+	</head>
+
+	<body bgcolor="#57bd9c"><center>
+		<p><h2>¿Que es el MRU?</h2></p>
+		<p>El movimiento rectilíneo uniforme (m.r.u.), es aquel con velocidad constante y cuya trayectoria es una línea recta. Un ejemplo claro son las puertas correderas de un ascensor, generalmente se abren y cierran en línea recta y siempre a la misma velocidad.</p>
+		<h2>Ingrese los datos:</h2><br><br>
+		<label>Ingrese la velocidad:</label><br>
+		<input style="background-color:#00986c" ; type="text" name="velo" id="V" placeholder="Ingrese la velocidad...">m/s<br>
+		<label>Ingrese la distancia:</label><br>
+		<input style="background-color:#00986c" ; type="text" name="dist" id="D" placeholder="Ingrese la distancia...">m<br>
+		<label>Ingrese el tiempo:</label><br>
+		<input style="background-color:#00986c" ; type="text" name="time" id="T" placeholder="Ingrese el tiempo...">s<br><br>
+		<input type="button" onclick="resultado()" name="boton" id="button1" value="Calcular">
+		<h2>Formulas:</h2>
+		<img src="https://fenixalive.github.io/fisica1/views/u1/img/trimpu.png" width="140px" height="140px">
+		<h2>Resultados:</h2>
+		<input style="background-color:#00986c" ; disabled type="text" name="resultado" id="res" placeholder="Resultado..."><br><br>
+		<a href="Proyecto_Indice.html">Indice</a> 
+
+		</center>
+
+	</body>
+</html>
